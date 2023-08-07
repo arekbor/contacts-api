@@ -1,5 +1,7 @@
 This is a contacts API. To run the API you need .NET Core version 6.0 and PostgreSQL 15.3.
 
+![image](https://github.com/arekbor/contacts-api/assets/86869559/410d8050-a59d-4d2b-95ba-857835b550b1)
+
 >How to run:
 1. Clone project from repo.
 2. Open `ContactsApi.sln` in favourite IDE.
