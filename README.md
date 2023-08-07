@@ -13,12 +13,14 @@ This is a contacts API. To run the API you need .NET Core version 6.0 and Postgr
 | Environment | Meaning |
 | ------- | --- |
 | DefaultContactPassword | This variable represents the default password for a created contact in the seeder. |
+| DefaultUserLogin | This variable indicates the default login for a created user in the seeder. |
 | DefaultUserPassword | This variable indicates the default password for a created user in the seeder. |
 | ConnectionString | This variable specifies the connection string to the PostgreSQL database. |
 | AccessTokenIssuer | The variable specifies the issuer for the JWT token generator. |
 | AccessTokenAudience | This variable specifies the audience for the JWT token generator. |
 | AccessTokenPrivateKey | This variable holds the private key for the JWT token generator. |
 | AccessTokenExpInMinutes | This variable sets the expiration time of the JWT token in minutes. |
+| AngularUrl | This variable specifies the URL to angular App. |
 
 Example PostgresSQL connection string:
 ```
