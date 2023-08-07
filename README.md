@@ -26,7 +26,13 @@ Example PostgresSQL connection string:
 ```
 Host=localhost; Port=5432; Database=postgres; Username=postgres; Password=password; timeout=1000
 ```
-4. Build and run api.
+
+4. Update the database with existing Migrations in the ContactApi project, open the command prompt and navigate to the ContactApi localization. Then, run the following command::
+```
+dotnet ef database update --project ContactsApi
+```
+   
+6. Build and run api.
 
 >Used packages:
 - Microsoft.AspNetCore.Authentication.JwtBearer
