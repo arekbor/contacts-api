@@ -26,11 +26,17 @@ public class DataSeeder
                 throw new Exception("Default user password not found from configuration.");
             }
             
+            var defaultUserLogin = _configuration["DefaultUserPassword"];
+            if (defaultUserLogin == null)
+            {
+                throw new Exception("Default user login not found from configuration.");
+            }
+            
             var users = new List<User>
             {
                 new()
                 {
-                    Username = "admin",
+                    Username = defaultUserLogin,
                     Password = BCrypt.Net.BCrypt.HashPassword(defaultUserPassword)
                 }
             };
