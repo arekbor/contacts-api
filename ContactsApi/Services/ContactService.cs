@@ -18,6 +18,12 @@ public class ContactService:IContactService
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// Retrieves a paginated list of contacts.
+    /// </summary>
+    /// <param name="page">The page number.</param>
+    /// <param name="pageSize">The number of result per page.</param>
+    /// <returns>A paginated list of contacts.</returns>
     public async Task<BaseResponse<PageResult<ContactResultDto>>> GetContacts(int page, int pageSize)
     {
         var countContacts = await _context.Contacts.CountAsync();
@@ -33,6 +39,13 @@ public class ContactService:IContactService
         return new BaseResponse<PageResult<ContactResultDto>>(paginationResult);
     }
 
+    
+    /// <summary>
+    /// Retrieves a contact details.
+    /// </summary>
+    /// <param name="contactId">The id of the contact.</param>
+    /// <returns>The contact details.</returns>
+    ///
     public async Task<BaseResponse<ContactDetailsDto>> GetContactDetails(int contactId)
     {
         var contact = await _context
@@ -47,6 +60,11 @@ public class ContactService:IContactService
         return new BaseResponse<ContactDetailsDto>(result);
     }
 
+    /// <summary>
+    /// Creates a contact.
+    /// </summary>
+    /// <param name="dto">Dto object containing information for creating the contact.</param>
+    /// <returns></returns>
     public async Task<BaseResponse> CreateContact(ContactDetailsDto dto)
     {
         var contact = _mapper.Map<Contact>(dto);
@@ -65,6 +83,11 @@ public class ContactService:IContactService
         return new BaseResponse();
     }
 
+    /// <summary>
+    /// Updates a contact.
+    /// </summary>
+    /// <param name="dto">Dto object containing information for updating the contact.</param>
+    /// <returns></returns>
     public async Task<BaseResponse> UpdateContact(ContactDetailsDto dto)
     {
         var contact = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == dto.Id);
@@ -95,6 +118,11 @@ public class ContactService:IContactService
         return new BaseResponse();
     }
 
+    /// <summary>
+    /// Deletes a contact.
+    /// </summary>
+    /// <param name="contactId">The id of the contact.</param>
+    /// <returns></returns>
     public async Task<BaseResponse> DeleteContact(int contactId)
     {
         var contact = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == contactId);

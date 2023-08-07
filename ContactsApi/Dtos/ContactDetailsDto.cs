@@ -1,5 +1,8 @@
 namespace ContactsApi.Dtos;
 
+/// <summary>
+/// Dto class representing a contact.
+/// </summary>
 public class ContactDetailsDto
 {
     public int Id { get; set; }

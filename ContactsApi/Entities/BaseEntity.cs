@@ -1,5 +1,8 @@
 namespace ContactsApi.Entities;
 
+/// <summary>
+/// Abstract class for entity classes.
+/// </summary>
 public abstract class BaseEntity
 {
     public int Id { get; set; }

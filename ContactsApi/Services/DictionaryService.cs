@@ -16,6 +16,10 @@ public class DictionaryService:IDictionaryService
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// Retrieves the category dictionaries. 
+    /// </summary>
+    /// <returns>The list of category dictionaries.</returns>
     public async Task<BaseResponse<List<CategoryDictionaryDto>>> GetCategoryDictionaries()
     {
         var categories = await _context
@@ -26,6 +30,11 @@ public class DictionaryService:IDictionaryService
         return new BaseResponse<List<CategoryDictionaryDto>>(dto);
     }
 
+    
+    /// <summary>
+    /// Retrieves the sub-category dictionaries. 
+    /// </summary>
+    /// <returns>The list of sub category dictionaries.</returns>
     public async Task<BaseResponse<List<SubCategoryDictionaryDto>>> GetSubCategoryDictionaries()
     {
         var subCategories = await _context
@@ -36,6 +45,11 @@ public class DictionaryService:IDictionaryService
         return new BaseResponse<List<SubCategoryDictionaryDto>>(dto);
     }
 
+    /// <summary>
+    /// Retrieves a category dictionary enum by category id.
+    /// </summary>
+    /// <param name="categoryId">The category id.</param>
+    /// <returns>A enum Id of the specified category dictionary.</returns>
     public async Task<BaseResponse<CategoryDictionaryEnumDto>> GetCategoryDictionaryEnumById(int categoryId)
     {
         var category = await _context.CategoryDictionaries

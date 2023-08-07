@@ -1,5 +1,8 @@
 namespace ContactsApi.Helpers;
 
+/// <summary>
+/// Helper class that defines the endpoints for API.
+/// </summary>
 public static class PathHelper
 {
     private const string BasePath = "/api";

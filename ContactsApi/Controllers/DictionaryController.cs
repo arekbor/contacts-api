@@ -15,7 +15,7 @@ public class DictionaryController:ControllerBase
     {
         _dictionaryService = dictionaryService;
     }
-
+    
     [HttpGet]
     [Route(PathHelper.GetCategoryDictionaries)]
     public async Task<IActionResult> GetCategoryDictionaries()

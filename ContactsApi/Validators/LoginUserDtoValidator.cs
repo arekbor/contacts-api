@@ -3,6 +3,9 @@ using FluentValidation;
 
 namespace ContactsApi.Validators;
 
+/// <summary>
+/// Validator for user login credentials.
+/// </summary>
 public class LoginUserDtoValidator:AbstractValidator<LoginUserDto>
 {
     public LoginUserDtoValidator()

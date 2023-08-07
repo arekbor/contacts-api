@@ -22,6 +22,12 @@ public class UserService:IUserService
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Authenticates a user on the provided user credentials and generates an access token (JWT).
+    /// </summary>
+    /// <param name="userDto">Dto object that contains login credentials.</param>
+    /// <returns>Jwt token or errors</returns>
+    /// <exception cref="Exception">Throws an exception if the private key, audience, issuer, or expiration time is missing or invalid.</exception>
     public async Task<BaseResponse<LogginUserResultDto>> Login(LoginUserDto userDto)
     {
         var validator = new LoginUserDtoValidator();

@@ -3,6 +3,9 @@ using ContactsApi.Interfaces;
 
 namespace ContactsApi.Dtos;
 
+/// <summary>
+/// Dto class representing a category dictionary.
+/// </summary>
 public class CategoryDictionaryDto:IDictionaryEntity<Category>
 {
     public int Id { get; set; }

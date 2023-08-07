@@ -1,5 +1,8 @@
 namespace ContactsApi.Entities;
 
+/// <summary>
+/// Represents an entity class for the contact.
+/// </summary>
 public class Contact:BaseEntity
 {
     public string Firstname { get; set; }

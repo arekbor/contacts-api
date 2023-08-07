@@ -16,7 +16,7 @@ public class ContactController:ControllerBase
     {
         _contactService = contactService;
     }
-
+    
     [HttpGet]
     [AllowAnonymous]
     [Route(PathHelper.GetContactsPath)]
@@ -29,7 +29,7 @@ public class ContactController:ControllerBase
         }
         return Ok(result);
     }
-
+    
     [HttpGet]
     [Route(PathHelper.GetContactDetails)]
     public async Task<IActionResult> GetContactDetails(int contactId)
@@ -54,6 +54,7 @@ public class ContactController:ControllerBase
         return Ok(result);
     }
 
+   
     [HttpPut]
     [Route(PathHelper.UpdateContact)]
     public async Task<IActionResult> UpdateContact(ContactDetailsDto dto)
@@ -65,7 +66,7 @@ public class ContactController:ControllerBase
         }
         return Ok(result);
     }
-
+    
     [HttpDelete]
     [Route(PathHelper.DeleteContact)]
     public async Task<IActionResult> DeleteContact(int contactId)
