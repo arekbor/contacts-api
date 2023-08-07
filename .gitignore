@@ -1,5 +1,6 @@
 /obj
 .idea
 /ContactsApi/bin
+/ContactsApi/obj
 /ContactsApi/appsettings.json
 
