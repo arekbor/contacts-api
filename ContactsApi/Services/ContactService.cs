@@ -2,6 +2,7 @@ using AutoMapper;
 using ContactsApi.Dtos;
 using ContactsApi.Entities;
 using ContactsApi.Interfaces;
+using ContactsApi.Validators;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContactsApi.Services;
@@ -67,6 +68,14 @@ public class ContactService:IContactService
     /// <returns></returns>
     public async Task<BaseResponse> CreateContact(ContactDetailsDto dto)
     {
+        var validator = new ContactDetailsDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+
+        if (validationResult.Errors.Any())
+        {
+            return new BaseResponse(validationResult);
+        }
+        
         var contact = _mapper.Map<Contact>(dto);
         
         var emailExists = await _context.Contacts.AnyAsync(c => c.Email == dto.Email);
@@ -90,6 +99,14 @@ public class ContactService:IContactService
     /// <returns></returns>
     public async Task<BaseResponse> UpdateContact(ContactDetailsDto dto)
     {
+        var validator = new ContactDetailsDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+
+        if (validationResult.Errors.Any())
+        {
+            return new BaseResponse(validationResult);
+        }
+        
         var contact = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == dto.Id);
         if (contact == null)
         {

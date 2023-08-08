@@ -26,7 +26,7 @@ public class DataSeeder
                 throw new Exception("Default user password not found from configuration.");
             }
             
-            var defaultUserLogin = _configuration["DefaultUserPassword"];
+            var defaultUserLogin = _configuration["DefaultUserLogin"];
             if (defaultUserLogin == null)
             {
                 throw new Exception("Default user login not found from configuration.");
